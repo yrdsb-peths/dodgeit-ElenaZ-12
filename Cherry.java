@@ -1,22 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cherry extends Actor
 {
+    int speed = -5;
     public void act()
     {
-        move(-8);
+        move(speed);
         
         if(getX()<=0)
         {
             resetCherry();
         }
-        
-        if(isTouching(Hero.class))
+        else if(isTouching(Hero.class))
         {
-            // Add a gameover symbol
-            SadFace sadFace = new SadFace();
-            getWorld().addObject(sadFace, 300, 200);
-            getWorld().removeObject(this);
-        }// Add your action code here.
+            resetCherry();
+            if (speed>-10)
+            {
+                speed -= 1;
+            }
+        }
     }
     
     public void resetCherry()
