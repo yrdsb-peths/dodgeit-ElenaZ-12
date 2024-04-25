@@ -3,7 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Banana extends Actor
 {
     int hits = 0;
-    
     public void act()
     {
         move(-5);
@@ -38,5 +37,10 @@ public class Banana extends Actor
         {
             setLocation(600,300);
         }
+    }
+    
+    public int getHits()
+    {
+        return hits;
     }
 }

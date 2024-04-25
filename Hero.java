@@ -22,8 +22,6 @@ public class Hero extends Actor
         {
             setLocation(100,300);
         }
-        
-        
     }
     
 

@@ -27,6 +27,26 @@ public class MyWorld extends World
         Cherry cherry = new Cherry();
         addObject(cherry, 600, 150);
         
+        Heart hp1 = new Heart();
+        addObject(hp1, 40, 30);
+                
+        Heart hp2 = new Heart();
+        addObject(hp2, 95, 30);
+                
+        Heart hp3 = new Heart();
+        addObject(hp3, 150, 30);
         
+        if (banana.getHits() == 1)
+        {
+            removeObject(hp3);
+        }
+        else if (banana.getHits() == 2)
+        {
+            removeObject(hp2);
+        }
+        else if (banana.getHits() == 3)
+        {
+            removeObject(hp1);
+        }
     }
 }
