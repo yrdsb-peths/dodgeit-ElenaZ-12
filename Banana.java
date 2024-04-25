@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Banana extends Actor
 {
-    int hits = 0;
+    public int hits = 0;
     public void act()
     {
         move(-5);
@@ -24,6 +24,7 @@ public class Banana extends Actor
             getWorld().addObject(sadFace, 300, 200);
             getWorld().removeObject(this);
         }
+        int hit = hits;
     }
     
     public void resetBanana()
