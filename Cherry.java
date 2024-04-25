@@ -22,14 +22,7 @@ public class Cherry extends Actor
     
     public void resetCherry()
     {
-        int num = Greenfoot.getRandomNumber(2);
-        if (num==0)
-        {
-            setLocation(600,150);
-        }
-        else
-        {
-            setLocation(600,350);
-        }
+        int num = Greenfoot.getRandomNumber(350);
+        setLocation (600, num+20);
     }
 }

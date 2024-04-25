@@ -2,6 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Banana extends Actor
 {
+    int hits = 0;
+    
     public void act()
     {
         move(-5);
@@ -13,7 +15,12 @@ public class Banana extends Actor
         
         if(isTouching(Hero.class))
         {
-            // Add a gameover symbol
+            hits += 1;
+            resetBanana();
+        }
+        
+        if (hits>=3)
+        {
             SadFace sadFace = new SadFace();
             getWorld().addObject(sadFace, 300, 200);
             getWorld().removeObject(this);

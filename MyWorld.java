@@ -26,6 +26,7 @@ public class MyWorld extends World
         
         Cherry cherry = new Cherry();
         addObject(cherry, 600, 150);
-
+        
+        
     }
 }
