@@ -42,8 +42,18 @@ public class Banana extends Actor
     {
         //Counter counter = (Counter) getWorld().getObjects(Counter.class).get(0);
         //counter.add(1);
-        Actor hp1 = getOneObjectAtOffset(1000, 1000, Heart.class);
+        Actor hp1 = getOneObjectAtOffset(-getX()+40, -getY()+30, Heart.class);
+        Actor hp2 = getOneObjectAtOffset(-getX()+95, -getY()+30, Heart.class);
+        Actor hp3 = getOneObjectAtOffset(-getX()+150, -getY()+30, Heart.class);
         if (hits == 1)
+        {
+            getWorld().removeObject(hp3);
+        }
+        else if (hits == 2)
+        {
+            getWorld().removeObject(hp2);
+        }
+        else if (hits == 3)
         {
             getWorld().removeObject(hp1);
         }
@@ -56,6 +66,7 @@ public class Banana extends Actor
             SadFace sadFace = new SadFace();
             getWorld().addObject(sadFace, 300, 200);
             getWorld().removeObject(this);
+            
         }
     }
 }
