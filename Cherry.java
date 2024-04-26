@@ -12,6 +12,8 @@ public class Cherry extends Actor
         }
         else if(isTouching(Hero.class))
         {
+            Counter counter = (Counter) getWorld().getObjects(Counter.class).get(0);
+            counter.add(1);
             resetCherry();
             if (speed>-10)
             {

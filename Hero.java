@@ -9,6 +9,11 @@ public class Hero extends Actor
      */
     public void act()
     {
+        moveAround();
+    }
+    
+    public void moveAround()
+    {
         if(Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(),getY()+5);
