@@ -9,7 +9,7 @@ public class Hero extends Actor
      */
     public void act()
     {
-        moveAround();
+        moveAround(); 
     }
     
     public void moveAround()

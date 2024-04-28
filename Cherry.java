@@ -5,7 +5,6 @@ public class Cherry extends Actor
     public void act()
     {
         move(speed);
-        
         if(getX()<=0)
         {
             resetCherry();

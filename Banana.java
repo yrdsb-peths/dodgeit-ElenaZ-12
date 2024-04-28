@@ -9,12 +9,18 @@ public class Banana extends Actor
         move(-5);
         resetBanana();
         updateHearts();
-        checkGameOver();
+        checkGameOver(); 
+    }
+    
+    public int getHits()
+    {
+        return hits;
     }
     
     public void reset()
     {
         int num = Greenfoot.getRandomNumber(2);
+        
         if (num==0)
         {
             setLocation(600,100);
@@ -40,33 +46,31 @@ public class Banana extends Actor
 
     public void updateHearts()
     {
-        //Counter counter = (Counter) getWorld().getObjects(Counter.class).get(0);
-        //counter.add(1);
-        Actor hp1 = getOneObjectAtOffset(-getX()+40, -getY()+30, Heart.class);
-        Actor hp2 = getOneObjectAtOffset(-getX()+95, -getY()+30, Heart.class);
-        Actor hp3 = getOneObjectAtOffset(-getX()+150, -getY()+30, Heart.class);
+        MyWorld myworld=(MyWorld)getWorld();
         if (hits == 1)
         {
-            getWorld().removeObject(hp3);
+            myworld.removeObject(myworld.hp3);
         }
         else if (hits == 2)
         {
-            getWorld().removeObject(hp2);
+            myworld.removeObject(myworld.hp2);
         }
         else if (hits == 3)
         {
-            getWorld().removeObject(hp1);
+            myworld.removeObject(myworld.hp1);
+            myworld.removeObject(myworld.cherry);
+            myworld.removeObject(myworld.hero);
         }
     }
     
     public void checkGameOver()
     {
-        if (hits>=3)
+        if (hits==3)
         {
             SadFace sadFace = new SadFace();
             getWorld().addObject(sadFace, 300, 200);
+            getWorld().showText("GAME OVER", 300, 150);
             getWorld().removeObject(this);
-            
         }
     }
 }
