@@ -3,10 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Banana extends Actor
 {
     public int hits = 0;
-    
+    int speed = -5;
     public void act()
     {
-        move(-5);
+        move(speed);
         resetBanana();
         updateHearts();
         checkGameOver(); 
@@ -19,16 +19,8 @@ public class Banana extends Actor
     
     public void reset()
     {
-        int num = Greenfoot.getRandomNumber(2);
-        
-        if (num==0)
-        {
-            setLocation(600,100);
-        }
-        else
-        {
-            setLocation(600,300);
-        }
+        int num = Greenfoot.getRandomNumber(350);
+        setLocation(600,num);
     }
     
     public void resetBanana()
@@ -36,6 +28,10 @@ public class Banana extends Actor
         if(getX()<=0)
         {
             reset();
+            if (speed>-10)
+            {
+                speed -=1;
+            }
         }
         else if(isTouching(Hero.class))
         {

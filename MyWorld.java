@@ -12,6 +12,7 @@ public class MyWorld extends World
     Hero hero;
     Cherry cherry;
     Heart hp1,hp2,hp3;
+    String instructions = "Avoid bananas and get cherries to gain points\nUse up and down key to move";
     public MyWorld()
     {
         super(600, 400, 1);
@@ -26,12 +27,14 @@ public class MyWorld extends World
         
         hero = new Hero();
         addObject(hero, 100, 100);
-
+        
+        int random = Greenfoot.getRandomNumber(350);
         banana = new Banana();
-        addObject(banana, 600, 100);
-
+        addObject(banana, 600, random);
+        
+        random = Greenfoot.getRandomNumber(350);
         cherry = new Cherry();
-        addObject(cherry, 600, 150);
+        addObject(cherry, 600, random);
 
         hp1 = new Heart();
         addObject(hp1, 40, 30);
@@ -41,6 +44,8 @@ public class MyWorld extends World
 
         hp3 = new Heart();
         addObject(hp3, 150, 30);
+        
+        showText(instructions, 300,200);
     }
     void del_hp1()
     {
