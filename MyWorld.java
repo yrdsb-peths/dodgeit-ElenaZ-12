@@ -24,17 +24,6 @@ public class MyWorld extends World
         Counter counter = new Counter();
         addObject(counter,555,147);
         counter.setLocation(313,19);
-        
-        hero = new Hero();
-        addObject(hero, 100, 100);
-        
-        int random = Greenfoot.getRandomNumber(350);
-        banana = new Banana();
-        addObject(banana, 600, random);
-        
-        random = Greenfoot.getRandomNumber(350);
-        cherry = new Cherry();
-        addObject(cherry, 600, random);
 
         hp1 = new Heart();
         addObject(hp1, 40, 30);
@@ -46,6 +35,17 @@ public class MyWorld extends World
         addObject(hp3, 150, 30);
         
         showText(instructions, 300,200);
+        
+        hero = new Hero();
+        addObject(hero, 100, 100);
+        
+        int random = Greenfoot.getRandomNumber(350);
+        banana = new Banana();
+        addObject(banana, 600, random);
+        
+        random = Greenfoot.getRandomNumber(350);
+        cherry = new Cherry();
+        addObject(cherry, 600, random);
     }
     void del_hp1()
     {
