@@ -2,7 +2,8 @@
 comment0.target=Hero
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Hero\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\ Allows\ the\ player\ to\ move\ around\r\n\ Precondition\:\ None\r\n\ Postcondition\:\ Player\ moves\r\n
 comment2.params=
 comment2.target=void\ moveAround()
+comment2.text=\ Moves\ player\ up\ or\ down\ if\ up\ or\ down\ key\ is\ pressed\r\n\ Precondition\:\ None\r\n\ Postcondition\:\ Player\ should\ move\ if\ up\ or\ down\ key\ is\ pressed\r\n
 numComments=3

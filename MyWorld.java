@@ -8,22 +8,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    //Sets variables
     Banana banana;
     Hero hero;
     Cherry cherry;
     Heart hp1,hp2,hp3;
     String instructions = "Avoid bananas and get cherries to gain points\nUse up and down key to move";
+    
+    /* Sets up the world and objects
+     * Precondition: None
+     * Postcondition: World and objects should appear
+     */
     public MyWorld()
     {
         super(600, 400, 1);
         prepare();
     }
     
+    /* Creates and places objects
+     * Precondition: None
+     * Postcondition: Objects should be placed
+     */
     private void prepare()
     {
         Counter counter = new Counter();
         addObject(counter,555,147);
-        counter.setLocation(313,19);
+        counter.setLocation(300,20);
 
         hp1 = new Heart();
         addObject(hp1, 40, 30);
@@ -47,6 +57,11 @@ public class MyWorld extends World
         cherry = new Cherry();
         addObject(cherry, 600, random);
     }
+    
+    /* These methods delete each respective object
+     * Precondition: None
+     * Postcondition: Respective object should be deleted
+     */
     void del_hp1()
     {
         removeObject(hp1);

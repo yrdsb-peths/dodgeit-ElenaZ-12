@@ -2,16 +2,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Hero extends Actor
 {
-    
-    /**
-     * Act - do whatever the Hero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+    /* Allows the player to move around
+     * Precondition: None
+     * Postcondition: Player moves
      */
     public void act()
     {
         moveAround(); 
     }
     
+    /* Moves player up or down if up or down key is pressed
+     * Precondition: None
+     * Postcondition: Player should move if up or down key is pressed
+     */
     public void moveAround()
     {
         if(Greenfoot.isKeyDown("down"))

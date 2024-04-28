@@ -3,7 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Banana extends Actor
 {
     public int hits = 0;
-    int speed = -5;
+    int speed = -3;
+    /* Makes the banana function; move, reset, lose hearts, determine if game over
+     * Precondition: None
+     * Postcondition: Banana should function
+     */
     public void act()
     {
         move(speed);
@@ -12,17 +16,20 @@ public class Banana extends Actor
         checkGameOver(); 
     }
     
-    public int getHits()
-    {
-        return hits;
-    }
-    
+    /* Resets the banana to a random height at the right side of the screen
+     * Precondition: None
+     * Postcondition: Banana should be along right edge at a random height each time
+     */
     public void reset()
     {
         int num = Greenfoot.getRandomNumber(350);
         setLocation(600,num);
     }
     
+    /* Resets banana if banana is at left edge or hits the hero/player
+     * Precondition: None
+     * Postcondition: Banana resets
+     */
     public void resetBanana()
     {
         if(getX()<=0)
@@ -40,6 +47,10 @@ public class Banana extends Actor
         }
     }
 
+    /* Removes a heart if banana hits hero/player
+     * Precondition: None
+     * Postcondition: Hearts should be removed if banana hits hero/player
+     */
     public void updateHearts()
     {
         MyWorld myworld=(MyWorld)getWorld();
@@ -59,6 +70,10 @@ public class Banana extends Actor
         }
     }
     
+    /* Checks if banana hits player 3 times (no hearts left) and shows game over
+     * Precondition: None
+     * Postcondition: SadFace and game over text should show up if banana hits player 3 times
+     */
     public void checkGameOver()
     {
         if (hits==3)

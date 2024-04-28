@@ -2,6 +2,11 @@
 comment0.target=Cherry
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\ Makes\ the\ cherry\ move\ and\ reset\r\n\ Precondition\:\ None\r\n\ Postcondition\:\ Cherry\ should\ move\ and\ reset\r\n
 comment2.params=
-comment2.target=void\ resetCherry()
-numComments=3
+comment2.target=void\ reset()
+comment2.text=\ Resets\ cherry\r\n\ Precondition\:\ None\r\n\ Postcondition\:\ Cherry\ should\ be\ reset\ at\ right\ edge\ at\ a\ random\ height\r\n
+comment3.params=
+comment3.target=void\ resetCherry()
+comment3.text=\ Resets\ cherry\ if\ conditions\ are\ met\r\n\ Precondition\:\ None\r\n\ Postcondition\:\ Cherry\ should\ reset\ if\ at\ left\ edge\ or\ touching\ player\r\n
+numComments=4
